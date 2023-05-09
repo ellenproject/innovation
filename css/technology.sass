@@ -1,0 +1,1311 @@
+*
+    margin: 0
+    padding: 0
+    max-width: 100%
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500&family=Oswald:wght@700&display=swap')
+
+    .b-box
+        box-sizing: border-box
+    .wrap
+        width: 1220px
+        margin: 0 auto
+        @media ( max-width: 1260px )
+            width: 100%
+            padding: 0 20px
+    .enTitle
+        font-size: 52px
+        color: #0e93e7
+        line-height: 1
+    .chTitle
+        font-size: 22px
+        font-weight: 500
+        color: #242424
+
+$color-blue: #0e93e7
+$color-skyblue: #a7c1da
+$color-lightblue: #e5f0fb
+$color-darkblue: #02498e
+
+@mixin desk()
+    @media ( max-width: 1180px )
+        @content
+
+@mixin pad()
+    @media ( max-width: 960px )
+        @content
+
+@mixin mobile()
+    @media ( max-width: 420px )
+        @content
+
+@keyframes scrolldownAni2
+    0%
+        left: 0
+    100%
+        left: calc( 67px - 10px )
+@keyframes circleAni
+    0%
+        -webkit-transform: rotate(0deg)
+        transform: rotate(0deg)
+    100%
+        -webkit-transform: rotate(360deg)
+        transform: rotate(360deg)
+@keyframes contactMask
+    0%, 100%
+        right: 0
+        width: 0
+    60%, 62%
+        width: 100%
+@keyframes btnAni
+    20%
+        border-color: rgba(79, 79, 79, 0.8)
+    100%
+        transform: scale(1.8)
+        border-color: rgba(79, 79, 79, 0)
+
+@keyframes btnAni02
+    20%
+        border-color: #4f4f4f
+    100%
+        transform: scale(1.8)
+        border-color: rgba(79, 79, 79, 0)
+        
+
+body
+    background-color: #fff
+    font-family: 'Oswald', 'Noto Sans TC'
+    font-size: 14px
+    .outerWrap
+        position: relative
+        overflow: hidden
+        opacity: 0
+        header
+            position: fixed
+            top: 25px
+            left: 95px
+            width: calc( 100% - 190px )
+            z-index: 50
+            background-color: #212529
+            box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 22%)
+            transition: all .4s ease
+            .headerWrap
+                position: relative
+                display: flex
+                align-items: center
+                width: 100%
+                margin: 0 auto
+                .logo
+                    width: 120px
+                    a
+                        background: url(../img/logo.svg) center center / contain no-repeat
+                        width: 100%
+                        height: 90px
+                .menu
+                    display: flex
+                    flex-wrap: wrap
+                    align-items: center
+                    justify-content: flex-end
+                    width: calc( 100% - 154px )
+                    .menuWrap
+                        display: flex
+                        align-items: center
+                        .menuItem
+                            display: inline-block
+                            a
+                                position: relative
+                                display: flex
+                                flex-direction: column
+                                align-items: center
+                                justify-content: center
+                                height: 90px
+                                padding: 5px 30px
+                                font-weight: 400
+                                color: #fff
+                                text-align: center
+                                letter-spacing: 1px
+                                span
+                                    font-size: 19px
+                                    font-weight: 700
+                            .submenuBox
+                                display: none
+                                position: absolute
+                                top: 100%
+                                left: 0
+                                width: 100%
+                                padding: 65px calc( (100% - 1480px) / 2)
+                                box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 22%)
+                                background-color: $color-blue
+                                .submenuOuterBox
+                                    padding: 0 20px
+                                    display: flex
+                                    .submenuTitle
+                                        width: 250px
+                                    .submenuLink
+                                        width: calc( 100% - 250px )
+                                        ul
+                                            display: flex
+                                            margin: 0 -15px
+                                            li
+                                                padding: 5px 15px
+                                                width: 25%
+                                                a
+                                                    position: relative
+                                                    display: inline-block
+                                                    overflow: hidden
+                                                    width: 100%
+                                                    &:hover
+                                                        .title
+                                                            transform: translate(0)
+                                                    .img
+                                                        display: block
+                                                        width: 100%
+                                                    .title
+                                                        position: absolute
+                                                        left: 0
+                                                        bottom: 0
+                                                        padding: 10px 25px
+                                                        width: 100%
+                                                        background-color: rgba(0, 0, 0, 0.5)
+                                                        transform: translateY(100%)
+                                                        font-size: 16px
+                                                        font-weight: 500
+                                                        color: #fff
+                                                        letter-spacing: 1px
+                                                        transition: all .3s ease
+                            .languageBox
+                                position: relative
+                                margin: 0 30px
+                                .languageBtn
+                                    cursor: pointer
+                                    position: relative
+                                    display: flex
+                                    align-items: center
+                                    padding: 0 20px
+                                    height: 37px
+                                    border: 1px solid #4f4f4f
+                                    border-radius: 25px
+                                    box-sizing: border-box
+                                    color: #fff
+                                    &::before
+                                        content: ""
+                                        position: absolute
+                                        right: 20px
+                                        width: 0
+                                        height: 0
+                                        border-style: solid
+                                        border-width: 6px 4px 0 4px
+                                        border-color: #fff transparent transparent transparent
+                                    span
+                                        display: none
+                                        padding-right: 10px
+                                    .main
+                                        display: inline-block
+                                        width: 55px
+                                .language
+                                    display: none
+                                    position: absolute
+                                    background-color: #222
+                                    width: 100%
+                                    z-index: 1
+                                    a
+                                        padding: 5px 20px
+                                        color: #fff
+                                        text-align: center
+                                    .current
+                                        display: none //key
+        .active
+            top: 0
+            left: 0
+            width: 100%
+        .bannerArea
+            position: relative
+            z-index: 1
+            .wrap
+                width: 100%
+                padding: 0
+                .bannerBox
+                    position: relative
+                    #banner
+                        .slick-list
+                            .slick-track
+                                display: -webkit-box //key
+                                .slick-slide
+                                    .Img
+                                        position: relative
+                                        &::before
+                                            content: ""
+                                            position: absolute
+                                            top: 0
+                                            left: 0
+                                            width: 100%
+                                            height: 100%
+                                            background-color: #fff
+                                            opacity: 0.5
+                                        img
+                                            width: 100%
+                                    .Txt
+                                        padding: 0 35px
+                                        position: absolute
+                                        top: 50%
+                                        left: 50%
+                                        transform: translate(-50%, -50%)
+                                        width: 100%
+                                        text-align: center
+                                        font-size: 18px
+                                        color: #fff
+                                        z-index: 1
+                                        box-sizing: border-box
+                                        @include desk
+                                        transform: translate(-50%, -50%)
+                                        font-size: 14px
+                                        @include mobile
+                                        font-size: 12px
+                                        .enTitle
+                                            font-size: 71px
+                                            font-weight: 700
+                                            line-height: 1
+                                            @include mobile
+                                            font-size: 34px
+                                        .chTitle
+                                            font-size: 44px
+                                            font-weight: 400
+                    .scrollDownIns
+                        position: absolute
+                        top: 50%
+                        left: 0
+                        transform-origin: center center
+                        transform: translateY(-50%) rotate(90deg)
+                        z-index: 5
+                        a
+                            position: relative
+                            display: inline-block
+                            padding: 20px 0 20px 80px
+                            font-size: 15px
+                            color: #242424
+                            &::before, &::after
+                                content: ""
+                                position: absolute
+                                top: 50%
+                                left: 0
+                                transform: translateY(-50%)
+                            &::before
+                                width: 67px
+                                height: 1px
+                                background-color: rgba(0, 0, 0, 0.5)
+                            &::after
+                                width: 10px
+                                height: 3px
+                                background-color: #242424
+                                animation: scrolldownAni2 3s linear infinite
+        .breadArea
+            position: relative
+            z-index: 1
+            .wrap
+                .bread
+                    display: flex
+                    flex-wrap: wrap
+                    align-items: center
+                    justify-content: flex-end
+                    height: 80px
+                    font-size: 14px
+                    color: $color-blue
+                    a
+                        color: #555555
+                    span
+                        padding: 0 8px
+                        color: $color-blue
+        .mainArea
+            position: relative
+            padding: 30px 0
+            &::before
+                content: ""
+                position: absolute
+                top: 235px
+                left: 35%
+                width: 1630px
+                height: 3000px
+                transform-origin: top left
+                transform: skewX(-37.5deg)
+                background-color: $color-lightblue
+                z-index: -2
+            &::after
+                content: ""
+                position: absolute
+                top: 3615px
+                left: 1920px
+                width: 1630px
+                height: calc( 100% - 3000px )
+                transform-origin: top left
+                transform: skewX(-37.5deg)
+                background-color: $color-lightblue
+                z-index: -2
+            .wrap
+                .contentBox
+                    position: relative
+                    clear: both
+                    .textEditor
+                        clear: both
+                        font-size: 15px
+                        color: #2f2f2f
+                        line-height: 1.8
+                        .material
+                            position: relative
+                            z-index: 1
+                            margin-bottom: 65px
+                            .articleBox
+                                text-align: center
+                                margin-bottom: 50px
+                            .materialBox
+                                position: relative
+                                .Img
+                                    position: relative
+                                    @include pad
+                                        height: 260px
+                                        overflow: hidden
+                                    &::before
+                                        content: ""
+                                        position: absolute
+                                        bottom: -35px
+                                        left: calc( 50% - 1px )
+                                        width: 2px
+                                        height: 70px
+                                        background-color: #fff
+                                    img
+                                        display: block
+                                        width: 100%
+                                        @include pad
+                                            position: absolute
+                                            top: 50%
+                                            left: 50%
+                                            transform: translate(-50%, -50%)
+                                            width: auto
+                                            height: 100%
+                                            max-width: none
+                                .Txt
+                                    position: absolute
+                                    top: 50%
+                                    left: 50%
+                                    transform: translate(-50%, -50%)
+                                    width: 100%
+                                    max-width: 500px
+                                    text-align: center
+                                    line-height: 1.5
+                                    padding: 0 20px
+                                    box-sizing: border-box
+                                    .subtitle
+                                        margin-bottom: 20px
+                                        .enTitle
+                                            color: #fff
+                                        .chTitle
+                                            color: #FFF
+                                    p
+                                        color: #FFF
+                        .report
+                            margin-top: -185px
+                            margin-left: calc((1220px - 100vw)/2)
+                            padding: 220px 0 100px
+                            position: relative
+                            width: 100vw
+                            @media ( max-width: 1260px )
+                                width: 100%
+                                margin-left: 0
+                            &::before
+                                content: ""
+                                position: absolute
+                                top: 0
+                                left: 0
+                                width: 1780px
+                                height: 100%
+                                background-repeat: no-repeat
+                                background-image: url(../img/about_advantage.png), linear-gradient(to bottom, $color-blue 0%, $color-blue calc( 100% - 156px ))
+                                background-size: cover
+                                background-position: center
+                                @media ( max-width: 1260px )
+                                    left: -20px
+                            .reportBox
+                                position: relative
+                                width: 1220px
+                                margin: 0 30% 
+                                @media ( max-width: 1260px )
+                                    width: 100%
+                                    padding: 0 20px
+                                    margin: 0 auto
+                                .reportList
+                                    list-style: none
+                                    padding-left: 0
+                                    display: flex
+                                    flex-wrap: wrap
+                                    margin: 0 -25px
+                                    @media ( max-width: 1260px )
+                                        margin: 0
+                                    li
+                                        width: 33.33%
+                                        padding: 10px 25px
+                                        @include desk
+                                            padding: 10px
+                                        @media ( max-width: 767px )
+                                            width: 50%
+                                        @media ( max-width: 480px )
+                                            width: 100%
+                                        .item
+                                            box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.1)
+                                            .Img
+                                                overflow: hidden
+                                                img
+                                                    display: block
+                                                    width: 100%
+                                                    transform: scale(1)
+                                                    transition: all .5s ease-in-out
+                                                &:hover
+                                                    img
+                                                        transform: scale(1.2)
+                                            .Txt
+                                                position: relative
+                                                padding: 25px
+                                                background: url(../img/index_bg_core.jpg) center center / cover no-repeat
+                                                min-height: 190px
+                                                @media ( max-width: 480px )
+                                                    min-height: auto
+                                                .testChtitle
+                                                    position: absolute
+                                                    bottom: calc( 100% - 19px )
+                                                    display: inline-block
+                                                    font-size: 18px
+                                                    color: #fff
+                                                    background-color: #242424
+                                                    min-width: 145px
+                                                    padding: 3px 15px
+                                                .testEntitle
+                                                    padding: 5px 0
+                                                    font-size: 24px
+                                                    line-height: 1.2
+                        .download
+                            padding: 50px 0 30px
+                            .subtitle
+                                margin-bottom: 25px
+                                text-align: center
+                            .downloadBox
+                                position: relative
+                                .downloadList
+                                    list-style: none
+                                    padding-left: 0
+                                    display: flex
+                                    flex-wrap: wrap
+                                    width: 100%
+                                    max-width: 980px
+                                    margin: 0 auto
+                                    li
+                                        padding: 10px 15px
+                                        width: 50%
+                                        @media ( max-width: 767px )
+                                            width: 100%
+                                        .item
+                                            position: relative
+                                            box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.36)
+                                            .Img
+                                                background-color: #242424
+                                                @media ( max-width: 480px )
+                                                    position: relative
+                                                    height: 200px
+                                                    overflow: hidden
+                                                img
+                                                    display: block
+                                                    width: 100%
+                                                    opacity: 0.6
+                                                    @media ( max-width: 480px )
+                                                        position: absolute
+                                                        top: 50%
+                                                        left: 50%
+                                                        transform: translate(-50%, -50%)
+                                                        height: 100%
+                                                        width: auto
+                                                        max-width: none
+                                            .Txt
+                                                position: absolute
+                                                top: 0
+                                                left: 0
+                                                width: 100%
+                                                height: 100%
+                                                padding: 25px
+                                                display: flex
+                                                flex-direction: column
+                                                justify-content: center
+                                                .testEntitle
+                                                    font-size: 25px
+                                                    color: #FFF
+                                                    @media ( max-width: 480px )
+                                                        line-height: 1.2
+                                                        margin-bottom: 10px
+                                                .testChtitle
+                                                    font-size: 16px
+                                                    color: #fff
+                                                    line-height: 1.2
+                                                .btn
+                                                    margin-top: 20px
+                                                    display: flex
+                                                    flex-wrap: wrap
+                                                    justify-content: space-between
+                                                    @media ( max-width: 440px )
+                                                        margin-top: 10px
+                                                    a
+                                                        position: relative
+                                                        display: inline-flex
+                                                        align-items: center
+                                                        justify-content: center
+                                                        width: 115px
+                                                        height: 33px
+                                                        color: #fff
+                                                        background-color: $color-blue
+                                                        margin-left: 40px
+                                                        @media ( max-width: 440px )
+                                                            height: 28px
+                                                            display: flex
+                                                            margin: 5px 5px 0
+                                                        &:nth-child(2)
+                                                            margin-right: 15%
+                                                            @media ( max-width: 440px )
+                                                                margin: 5px 5px 0
+                                                        &:hover
+                                                            background-color: #0b7bc0
+                                                            &::before
+                                                                width: 50px
+                                                        &::before
+                                                            content: ""
+                                                            position: absolute
+                                                            top: 50%
+                                                            left: calc( 100% - 12.5px )
+                                                            width: 25px
+                                                            height: 1px
+                                                            background-color: #fff
+                                                            transition: all .4s ease
+                        .integrationBox
+                            display: flex
+                            -webkit-box-pack: justify
+                            justify-content: space-between
+                            padding: 80px 0 100px
+                            @media ( max-width: 1024px )
+                                flex-direction: column  //key
+                                padding-bottom: 50px
+                            .leftBox
+                                max-width: calc( 100% - 590px )
+                                padding-right: 40px
+                                @media ( max-width: 1024px )
+                                    max-width: 1024px
+                                    padding-right: 0
+                                .titleBox
+                                    margin-bottom: 25px
+                                    color: $color-blue
+                                    text-align: center
+                                .integrationBtnBox
+                                    display: flex
+                                    flex-wrap: wrap
+                                    @media ( max-width: 1024px )
+                                        justify-content: center
+                                    li
+                                        margin: 0 15px 15px 0
+                                        position: relative
+                                        z-index: 1
+                                        color: $color-blue
+                                        border: 1px solid #cacaca
+                                        border-radius: 30px
+                                        font-size: 14px
+                                        font-weight: 400
+                                        cursor: pointer
+                                        overflow: hidden
+                                        padding: 0 10px
+                                        transition: all .3s ease-in-out
+                                        &::before
+                                            content: ""
+                                            position: absolute
+                                            top: -1px
+                                            left: -1px
+                                            z-index: -1
+                                            width: calc( 100% + 2px )
+                                            height: calc( 100% + 2px )
+                                            background-image: linear-gradient(45deg, $color-darkblue 0, $color-blue 100%)
+                                            background-repeat: no-repeat
+                                            opacity: 0
+                                        &:hover
+                                            background-image: linear-gradient(45deg, $color-darkblue 0, $color-blue 100%)
+                                            color: #FFF
+                                    .current  //key
+                                        color: #FFF
+                                        &::before
+                                            opacity: 1
+                                .integrationTextList
+                                    .slick-list
+                                        .slick-track
+                                            display: -webkit-box //key
+                                            .slick-slide
+                                                .Txt
+                                                    transition: all .5s ease
+                                                    transform: translateY(20px)
+                                                    opacity: 0
+                                                    color: #555
+                                                    .labelTitle
+                                                        margin: 10px 0
+                                                        font-size: 20px
+                                                        font-weight: 400
+                                                    p
+                                                        line-height: 1.8
+                                                        font-size: 15px
+                                            .current  //key
+                                                .Txt
+                                                    transform: translate(0)
+                                                    opacity: 1
+                                                    transition-delay: .3s
+                                                    color: #555
+                            .rightBox
+                                position: relative
+                                z-index: 1
+                                max-width: 600px
+                                .integrationList
+                                    .slick-list
+                                        .slick-track
+                                            display: -webkit-box  //key
+                                            .slick-slide
+                                                width: 600px
+                                                .item
+                                                    .Img
+                                                        img
+                                                            margin: 0 auto
+                                                            display: block
+                                                            max-width: 100%
+                        .show  //key
+                            transform: translate(0)
+                            opacity: 1
+                                    
+            .show
+                opacity: 1
+        .contactArea
+            position: relative
+            margin-top: 80px
+            box-sizing: border-box
+            min-height: 500px
+            @media ( max-width: 420px )
+                min-height: 300px
+            &::after
+                content: ""
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                background: url(../img/index_bg_contact.jpg) center center / cover no-repeat
+                opacity: 0
+            .wrap
+                @media ( max-width: 960px )
+                    width: 100%
+                    padding: 0 20px
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 0
+                    right: 0
+                    width: 0%
+                    height: 100%
+                    background-color: #242424
+                    z-index: 1
+                .contactBox
+                    position: relative
+                    transform: translateY(-30px)
+                    padding: 35px 45px 60px
+                    width: 410px
+                    background-color: #242424
+                    transform: translateY(0)
+                    opacity: 0
+                    z-index: 1
+                    @media ( max-width: 480px )
+                        padding: 20px 25px 30px
+                    @media ( max-width: 450px )
+                        width: 100%
+                    .titleBox
+                        position: relative
+                        margin-bottom: 20px
+                        color: #FFF
+                        .enTitle
+                            display: inline-block
+                            margin-bottom: 12px
+                            font-size: 62px
+                            line-height: 1
+                        .chTitle
+                            font-size: 22px
+                            font-weight: 500
+                            letter-spacing: 1px
+                            line-height: 1
+                    .info
+                        .Txt
+                            color: #b5b5b5
+                        .viewBtn
+                            margin-top: 45px
+                            a
+                                position: relative
+                                display: flex
+                                align-items: center
+                                justify-content: center
+                                width: 190px
+                                height: 40px
+                                color: #fff
+                                background-color: $color-blue
+                                &::before
+                                    content: ""
+                                    position: absolute
+                                    top: 50%
+                                    left: calc( 100% - 25px )
+                                    width: 50px
+                                    height: 1px
+                                    background-color: #cacaca
+                                    transition: all .4s ease
+        .show
+            opacity: 1
+            &::after
+                transition: all 0s .72s ease-in-out
+                opacity: 1
+            .wrap
+                &::before
+                    animation: contactMask 1.2s ease
+                .contactBox
+                    transition: all .8s 1s ease-in-out
+                    transform: translateY(-30px)
+                    opacity: 1
+        .goTop
+            cursor: pointer
+            position: relative
+            display: flex
+            align-items: center
+            justify-content: center
+            height: 48px
+            color: #FFF
+            letter-spacing: 1px
+            background-color: $color-blue
+        footer
+            position: relative
+            padding: 60px 0 75px
+            background: url(../img/index_bg_footer.jpg) center center / cover no-repeat
+            overflow: hidden
+            .wrap
+                width: 1640px
+                margin: 0 auto
+                display: flex
+                @media ( max-width: 1680px )
+                    width: 100%
+                    padding: 0 20px
+                @media ( max-width: 960px )
+                    display: block
+                .left
+                    // float: left
+                    width: 125px
+                    @media ( max-width: 960px )
+                        margin: 0 auto
+                    .downLogo
+                .right
+                    // float: left
+                    display: flex
+                    justify-content: space-between
+                    width: calc( 100% - 245px )
+                    padding-left: 50px
+                    box-sizing: border-box
+                    @media ( max-width: 960px )
+                        display: block
+                        width: 100%
+                        padding-left: 0
+                    .infoBox
+                        .info
+                            padding: 3px 0
+                            display: flex
+                            flex-wrap: wrap
+                            align-items: center
+                            font-size: 14px
+                            font-weight: 400
+                            font-family: "Noto Sans TC", "微軟正黑體", sans-serif
+                            color: #d8d8d8
+                            letter-spacing: 0.5
+                            @media ( max-width: 960px )
+                                justify-content: center
+                                text-align: center
+                            span
+                            .marker
+                                font-size: 14px
+                                font-weight: 400
+                                color: #d8d8d8
+                        .copyright
+                            margin-top: 15px
+                            display: flex
+                            flex-wrap: wrap
+                            color: #555555
+                            @media ( max-width: 960px )
+                                flex-direction: column
+                                align-items: center
+                    .socialBox
+                        width: 280px
+                        display: flex
+                        align-items: center
+                        justify-content: space-between
+                        @media ( max-width: 960px )
+                            -webkit-box-orient: vertical
+                            -webkit-box-direction: normal
+                            flex-direction: column
+                            width: 100%
+                        .social
+                            display: flex
+                            @media ( max-width: 960px )
+                                padding: 30px 0
+                        .contactBtn
+                            position: relative
+                            &::before, &::after
+                                content: ""
+                                position: absolute
+                                top: 0
+                                left: 0
+                                width: 100%
+                                height: 100%
+                                border-radius: 50%
+                                border: 1px solid
+                                pointer-events: none
+                            &::before
+                                border-color: #1e1e1e
+                                animation: btnAni 1.25s infinite cubic-bezier(0.66, 0, 0, 1)
+                            &::after
+                                border-color: #4f4f4f
+                                animation: btnAni02 1.25s 0.25s infinite cubic-bezier(0.66, 0, 0, 1)
+                            a
+                                position: relative
+                                display: flex
+                                flex-direction: column
+                                align-items: center
+                                justify-content: center
+                                font-family: "Noto Sans TC", "微軟正黑體", sans-serif
+                                width: 75px
+                                height: 75px
+                                background-color: #0e93e7
+                                color: #fff
+                                border-radius: 50%
+                                z-index: 1
+                                svg
+                                    width: 24px
+        .contactArea
+            &.show
+                &::before
+                    height: calc( 100% + 80px )
+                    transition: height .6s ease
+                    opacity: 1
+                &::after
+                    transition: all 0s 1.32s ease-in-out
+                    opacity: 1
+                .wrap
+                    &::before
+                        animation: contactMask 1.2s ease .6s
+                    .contactBox
+                        transition: all .8s ease-in-out
+                        transform: translateY(-30px)
+                        opacity: 1
+    .m_menu
+        display: none
+
+@media ( max-width: 1180px )
+    body
+        .outerWrap
+            padding-top: 80px
+            header
+                display: none
+        .m_menu
+            display: block
+            position: fixed
+            top: 0
+            left: 0
+            z-index: 999
+            width: 100%
+            box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 22%)
+            .mask
+                display: none
+                position: fixed
+                top: 0
+                left: 0
+                z-index: 10
+                background-color: rgba(0, 0, 0, 0.6)
+                width: 100%
+                height: 100%
+                padding-bottom: 60px
+            .controlBox
+                position: relative
+                z-index: 99
+                background-color: #242424
+                .main
+                    position: absolute
+                    right: 15px
+                    top: calc( 50% - 25px )
+                    width: 51px
+                    height: 51px
+                    background-color: $color-blue
+                    span
+                        position: absolute
+                        top: 50%
+                        left: 50%
+                        transform: translateX(-50%)
+                        margin-top: -0.5px
+                        width: 28px
+                        height: 1px
+                        transition: all .5s
+                        box-sizing: border-box
+                        &::before, &::after
+                            content: ''
+                            position: absolute
+                            left: 0
+                            width: 100%
+                            height: 1px
+                            background-color: #fff
+                            transition: all .5s
+                        &::before
+                            top: -4px
+                        &::after
+                            bottom: -4px
+                .show    //hamburger key
+                    span
+                        &::before
+                            top: 0
+                            transform: rotate(38deg)
+                        &::after
+                            bottom: 0
+                            transform: rotate(-38deg)
+                .m_logo
+                    margin: 0 auto
+                    width: 90px
+                    a
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        height: 80px
+                        img
+                            display: block
+                            width: 100%
+            .hideBox
+                position: fixed
+                top: 0
+                left: 0
+                bottom: 0
+                z-index: 11
+                width: 100%
+                padding: 145px 0 80px
+                overflow-y: auto
+                box-sizing: border-box
+                background-color: #242424
+                transition: all .4s ease
+                transform: translateY(-100%)
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 0
+                    left: calc( 50% - 240px + 85px )
+                    width: 1px
+                    height: 100%
+                    background-image: linear-gradient(to bottom, transparent 0%, #fff 100%)
+                    z-index: 1
+                .m_menu_ins
+                    margin: 0 auto
+                    width: 100%
+                    max-width: 480px
+                    .languageBox
+                        display: inline-block
+                        margin: 0 0 25px 105px
+                        .languageBtn
+                            cursor: pointer
+                            position: relative
+                            display: flex
+                            align-items: center
+                            padding: 0 20px
+                            height: 37px
+                            border: 1px solid #4f4f4f
+                            border-radius: 25px
+                            box-sizing: border-box
+                            color: #fff
+                            &::before
+                                content: ""
+                                position: absolute
+                                right: 20px
+                                width: 0
+                                height: 0
+                                border-style: solid
+                                border-width: 6px 4px 0 4px
+                                border-color: #FFF transparent transparent transparent
+                            span
+                                display: block
+                            .main
+                                display: inline-block
+                                width: 55px
+                        .language
+                            right: 20px
+                            width: 95px
+                            background-color: #222
+                            display: none //key
+                            a
+                                padding: 5px 20px
+                                color: #fff
+                                text-align: center
+                            .current
+                                display: none
+                    .sp
+                        display: none
+                        padding: 10px
+                        font-size: 13px
+                        color: #fff
+                        background-color: #c80303
+                    .nav
+                        position: relative
+                        li
+                            a
+                                position: relative
+                                display: flex
+                                align-items: flex-end
+                                padding: 10px 25px
+                                font-size: 14px
+                                color: #b2b2b2
+                                &:hover
+                                    span, .num, .title
+                                        color: $color-blue
+                                span
+                                    padding: 0 10px 0 20px
+                                    font-size: 19px
+                                    color: #fff
+                                    transition: all .4s ease
+                            .current  //key
+                                color: $color-blue
+                        .submenuDown
+                            a
+                                &::before
+                                    content: "\f078"
+                                    position: absolute
+                                    right: 10px
+                                    top: calc( 50% - 9px )
+                                    font-size: 19px
+                                    font-family: FontAwesome
+                            .submenuBox
+                                display: none
+                                padding-left: 90px
+                                .submenuOuterBox
+                                    .submenuTitle
+                                        display: none
+                                    .submenuLink
+                                        ul
+                                            li
+                                                a
+                                                    &::before
+                                                        display: none
+                                                    img
+                                                        display: none
+                                                    .title
+                        .num
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            text-align: center
+                            width: 60px
+                            font-size: 19px
+                            color: #fff
+                            transition: all .4s ease
+            .show  //key
+                transition: all .4s .2s ease
+                transform: translateY(0)
+
+
+@media ( max-width: 1180px )
+    body
+        .outerWrap
+            header
+                display: none
+        .m_menu
+            display: block
+            position: fixed
+            top: 0
+            left: 0
+            z-index: 999
+            width: 100%
+            box-shadow: 0px 3px 12px 0px rgba(0, 0, 0, 22%)
+            .mask
+                display: none
+                position: fixed
+                top: 0
+                left: 0
+                z-index: 10
+                background-color: rgba(0, 0, 0, 0.6)
+                width: 100%
+                height: 100%
+                padding-bottom: 60px
+            .controlBox
+                position: relative
+                z-index: 99
+                background-color: #242424
+                .main
+                    position: absolute
+                    right: 15px
+                    top: calc( 50% - 25px )
+                    width: 51px
+                    height: 51px
+                    background-color: $color-blue
+                    span
+                        position: absolute
+                        top: 50%
+                        left: 50%
+                        transform: translateX(-50%)
+                        margin-top: -0.5px
+                        width: 28px
+                        height: 1px
+                        transition: all .5s
+                        box-sizing: border-box
+                        &::before, &::after
+                            content: ''
+                            position: absolute
+                            left: 0
+                            width: 100%
+                            height: 1px
+                            background-color: #fff
+                            transition: all .5s
+                        &::before
+                            top: -4px
+                        &::after
+                            bottom: -4px
+                .show    //hamburger key
+                    span
+                        &::before
+                            top: 0
+                            transform: rotate(38deg)
+                        &::after
+                            bottom: 0
+                            transform: rotate(-38deg)
+                .m_logo
+                    margin: 0 auto
+                    width: 90px
+                    a
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        height: 80px
+                        img
+                            display: block
+                            width: 100%
+            .hideBox
+                position: fixed
+                top: 0
+                left: 0
+                bottom: 0
+                z-index: 11
+                width: 100%
+                padding: 145px 0 80px
+                overflow-y: auto
+                box-sizing: border-box
+                background-color: #242424
+                transition: all .4s ease
+                transform: translateY(-100%)
+                &::before
+                    content: ""
+                    position: absolute
+                    top: 0
+                    left: calc( 50% - 240px + 85px )
+                    width: 1px
+                    height: 100%
+                    background-image: linear-gradient(to bottom, transparent 0%, #fff 100%)
+                    z-index: 1
+                .m_menu_ins
+                    margin: 0 auto
+                    width: 100%
+                    max-width: 480px
+                    .languageBox
+                        display: inline-block
+                        margin: 0 0 25px 105px
+                        .languageBtn
+                            cursor: pointer
+                            position: relative
+                            display: flex
+                            align-items: center
+                            padding: 0 20px
+                            height: 37px
+                            border: 1px solid #4f4f4f
+                            border-radius: 25px
+                            box-sizing: border-box
+                            color: #fff
+                            &::before
+                                content: ""
+                                position: absolute
+                                right: 20px
+                                width: 0
+                                height: 0
+                                border-style: solid
+                                border-width: 6px 4px 0 4px
+                                border-color: #FFF transparent transparent transparent
+                            span
+                                display: block
+                            .main
+                                display: inline-block
+                                width: 55px
+                        .language
+                            right: 20px
+                            width: 95px
+                            background-color: #222
+                            display: none //key
+                            a
+                                padding: 5px 20px
+                                color: #fff
+                                text-align: center
+                            .current
+                                display: none
+                    .sp
+                        display: none
+                        padding: 10px
+                        font-size: 13px
+                        color: #fff
+                        background-color: #c80303
+                    .nav
+                        position: relative
+                        li
+                            a
+                                position: relative
+                                display: flex
+                                align-items: flex-end
+                                padding: 10px 25px
+                                font-size: 14px
+                                color: #b2b2b2
+                                &:hover
+                                    span, .num, .title
+                                        color: $color-blue
+                                span
+                                    padding: 0 10px 0 20px
+                                    font-size: 19px
+                                    color: #fff
+                                    transition: all .4s ease
+                            .current  //key
+                                color: $color-blue
+                        .submenuDown
+                            a
+                                &::before
+                                    content: "\f078"
+                                    position: absolute
+                                    right: 10px
+                                    top: calc( 50% - 9px )
+                                    font-size: 19px
+                                    font-family: FontAwesome
+                            .submenuBox
+                                display: none
+                                padding-left: 90px
+                                .submenuOuterBox
+                                    .submenuTitle
+                                        display: none
+                                    .submenuLink
+                                        ul
+                                            li
+                                                a
+                                                    &::before
+                                                        display: none
+                                                    img
+                                                        display: none
+                                                    .title
+                        .num
+                            display: flex
+                            align-items: center
+                            justify-content: center
+                            text-align: center
+                            width: 60px
+                            font-size: 19px
+                            color: #fff
+                            transition: all .4s ease
+            .show  //key
+                transition: all .4s .2s ease
+                transform: translateY(0)

@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Innovation</title>
+    <meta name="description" content="創業以來一直抱持著「提供可以讓客戶滿足的電機部品」為目標。藉著製品的品質、機能、性能、利便性、擴充性、技術支援、修理體制等的提升來實現此目標。">
+    <meta name="keywords" content="安川電機,伺服系統,運動控制器,變頻器,機器人">
+    <!-- line FB  -->
+	<meta property="og:title" content="創新科技 提供完美服務" />
+	<meta property="og:description" content="我們擅長電機部品，藉由品質、機能、便利性與技術支援來滿足客戶需求。" />
+	<meta property="og:image" content="./img/share_1000x525.jpg" />
+	<meta property="og:url" content="https://www.innovation.com.tw"/>
+    <meta property="og:image:width" content="1000" />
+    <meta property="og:image:height" content="525" />
+    <meta name="twitter:title" content="台灣創新科技股份有限公司">
+    <link rel="shortcut icon" href="./img/icon.png" sizes="32x32">
+    <!-- slick -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.css">
+    <!-- AOS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <script>
+        /* waiting block */
+        function open_layer_detail(div_name,width,height){
+            if(width==''){
+                width=0;
+            }
+            if(height==''){
+                height=0;
+            }
+            $.blockUI({
+                message:$('#'+div_name),
+                    css:{
+                        cursor:'default',
+                        width: width + 'px',
+                        height: height + 'px',
+                        padding: '0px',
+                        top: ($(window).height()-height)/2 + 'px',
+                        left: ($(window).width()-width)/2 + 'px'
+                    }
+            });
+        }
+        function open_loading_status(loading_name){
+            width = $().css().replace();
+            height = $().css().replace();
+            $.blockUI({
+                message:$('#'+loading_name),
+                    css:{
+                        cursor:'default',
+                        border:'',
+                        backgroundColor:'',
+                        width: width + 'px',
+                        height: width + 'px',
+                        padding: '0px',
+                        top:($(window).height()-height)/2 + 'px',
+                        left:($(window).width()-width)/2 + 'px'
+                    }
+            });
+        }
+        function close_layer_detail(){
+            $.blockUI();
+        }
+        function close_top_layer_detail(){
+            top.$.unblockUI();
+        }
+        //建立執行的div
+        jQuery.browser = {};
+        $(function(){
+            jQuery.browser.msie = false;
+            jQuery.browser.version = 0;
+            if(navigator.userAgent.match(/MSIE([0-9]+)\./)){
+                jQuery.browser.msie = true;
+                jQuery.browser.version = RegExp.$1;
+            }
+        })();
+        $('body').prepend("<span id='iframe_string'></span>");
+        $('body').prepend('<div id="waiting_action" style="display: none; text-align: center; position: absolute; z-index=99998; color: #FFF; font-size: 12px; border: 0px;"><img src="./img/loading_big.gif"><br><img src="./img/loading_text.png"></div>')
+        //end
+    </script>
+</head>
+<body>
+    <!-- loading -->
+    <div class="loadingArea show">
+        <div class="loadLogo">
+            <svg id="eQc3Z7hlRyn1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 249.43 260.17" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
+                <path id="eQc3Z7hlRyn2" d="M202.71,83.08c.28,1.82-1.26,3.41-3.41,3.51l-38.59,6.94c-2.32.09-4.45-1.33-4.76-3.26l-7.4-46.49c-.37-2.11,1.35-3.84,3.78-3.81l41,5.86c2.155539-.030747,4.024535,1.484655,4.44,3.6Z" transform="translate(-.29-.42)" opacity="0" fill="#0080c7"/>
+                <path id="eQc3Z7hlRyn3" d="M147.52,87.46c.68,3.4-2.18,6.34-6.43,6.56L62.41,108c-4.9.28-9.76-2.42-10.78-6.09L25.71,8.17c-1.29-4.5,2.29-8,7.88-7.74l90.78,15.06c4.61.19,8.85,3.53,9.58,7.43Z" transform="translate(-.29-.42)" opacity="0.3" fill="#0080c7"/>
+                <path id="eQc3Z7hlRyn4" d="M249.71,159.13c.011589,1.275006-.995678,2.326646-2.27,2.37l-24.8,6.26c-1.290892.316057-2.596221-.463576-2.93-1.75l-3.48-27.6c-.021573-.639268.211869-1.26089.648902-1.727935s1.041807-.741196,1.681098-.762065h.09l25.6,1c1.285009-.21391,2.507415.63203,2.76,1.91Z" transform="translate(-.29-.42)" opacity="0.3" fill="#00a1e0"/>
+                <path id="eQc3Z7hlRyn5" d="M220.77,86.61c.038195.633126-.177911,1.255307-.600349,1.728438s-1.016259.758068-1.649651.791562h-.19l-26.86,5c-1.476754.159037-2.838899-.812082-3.17-2.26l-4-32.33c-.097604-1.365396.925266-2.553534,2.29-2.66.113113-.010002.226887-.010002.34,0l27.78,3.53c1.473351-.022275,2.744758,1.028755,3,2.48Z" transform="translate(-.29-.42)" opacity="0" fill="#00a1e0"/>
+                <path id="eQc3Z7hlRyn6" d="M223.56,124.12c.027952,1.310736-1.009375,2.397247-2.32,2.43v0l-25.67,5.72c-1.374919.247581-2.699721-.635621-3-2l-3.72-29.62c-.035412-.647361.188269-1.282199.621667-1.764377s1.040875-.772049,1.688333-.805623h.23l26.5,2.09c1.39198-.121461,2.639108.858738,2.85,2.24Z" transform="translate(-.29-.42)" opacity="0.5" fill="#00a1e0"/>
+                <path id="eQc3Z7hlRyn7" d="M219.08,203c.18,1.29-1.08,2.6-2.78,2.91l-30.7,9.23c-1.81.33-3.44-.48-3.66-1.81l-4.85-32.14c-.25-1.43,1.13-2.84,3-3.11l32-.61c1.75-.24,3.28.69,3.45,2.05Z" transform="translate(-.29-.42)" opacity="0" fill="#0080c7"/>
+                <path id="eQc3Z7hlRyn8" d="M199.55,163.94c.022379,1.029054-.791064,1.882722-1.82,1.91L177.44,171c-1.038232.272275-2.106273-.323533-2.42-1.35l-3.31-21.64c-.15-1,.73-1.86,1.94-2l20.89.41c1.03386-.190649,2.038839.451663,2.3,1.47Z" transform="translate(-.29-.42)" opacity="0.2" fill="#0080c7"/>
+                <path id="eQc3Z7hlRyn9" d="M153.91,163.71c.42,1.94-1.39,3.79-4,4.15l-47.15,11.63c-2.84.37-5.57-.94-6.09-3L84.41,127c-.59-2.27,1.48-4.35,4.51-4.55l51.38,2.21c2.78-.17,5.26,1.38,5.67,3.46Z" transform="translate(-.29-.42)" fill="#0080c7"/>
+                <path d="M185.71,117.28c.34,2.13-1.49,4.08-4.15,4.29l-48.1,10.09c-2.9.25-5.64-1.34-6.1-3.6l-11-55.29c-.53-2.52,1.6-4.7,4.72-4.74l52.14,5.54c2.8-.06,5.26,1.79,5.6,4.13Z" transform="translate(-.29-.42)" fill="#00a1e0"/>
+                <path id="eQc3Z7hlRyn11" d="M110.71,109.49c.7,2.88-1.82,5.48-5.65,5.78L34.71,128.61c-4.37.35-8.66-1.86-9.66-5L0.55,45.83c-1.22-3.67,1.82-6.74,6.69-6.67l80.54,9.93c4.13,0,8,2.69,8.81,6Z" transform="translate(-.280669-.42)" opacity="0" fill="#00a1e0"/>
+                <path id="eQc3Z7hlRyn12" d="M148.37,211.56c.63,2.74-2,5.55-6,6.28L69,239.2c-4.6.84-9-.79-10-3.71l-23.33-73.9c-1.19-3.51,2.13-6.86,7.24-7.37l83.88.73c4.33-.48,8.26,1.74,9,4.9Z" transform="translate(-.29-.42)" opacity="0.5" fill="#00a1e0"/>
+                <path id="eQc3Z7hlRyn13" d="M104,241.56c.53,1.72-1.25,3.56-4,4.1L51.7,260.41c-2.93.59-5.82-.36-6.42-2.15l-15-43.68c-.73-2,1.29-4.06,4.44-4.52L88,207.41c2.88-.43,5.55.77,6.09,2.62Z" transform="translate(-.29-.42)" opacity="0.5" fill="#0080c7"/>
+                <script>
+                  <![CDATA[(function(s,i,u,o,c,w,d,t,n,x,e,p,a,b){w[o]=w[o]||{};w[o][s]=w[o][s]||[];w[o][s].push(i);e=d.createElementNS(n,t);e.async=true;e.setAttributeNS(x,'href',[u,s,'.','j','s','?','v','=',c].join(''));e.setAttributeNS(null,'src',[u,s,'.','j','s','?','v','=',c].join(''));p=d.getElementsByTagName(t)[0];p.parentNode.insertBefore(e,p);})('5c7f360c',{"root":"eQc3Z7hlRyn1","version":"2022-05-04","animations":[{"elements":{"eQc3Z7hlRyn2":{"opacity":[{"t":0,"v":0},{"t":1300,"v":1}]},"eQc3Z7hlRyn3":{"opacity":[{"t":500,"v":0.3},{"t":1000,"v":0.8},{"t":1500,"v":0.3},{"t":2200,"v":1}]},"eQc3Z7hlRyn4":{"opacity":[{"t":800,"v":0.3},{"t":2000,"v":1}]},"eQc3Z7hlRyn5":{"opacity":[{"t":1500,"v":0},{"t":2000,"v":1}]},"eQc3Z7hlRyn6":{"opacity":[{"t":1000,"v":0.5},{"t":1500,"v":1}]},"eQc3Z7hlRyn7":{"opacity":[{"t":1200,"v":0},{"t":2000,"v":1}]},"eQc3Z7hlRyn8":{"opacity":[{"t":600,"v":0.2},{"t":1700,"v":1}]},"eQc3Z7hlRyn9":{"opacity":[{"t":500,"v":1},{"t":1300,"v":0.5},{"t":2200,"v":1}]},"eQc3Z7hlRyn11":{"opacity":[{"t":0,"v":0},{"t":1700,"v":1}]},"eQc3Z7hlRyn12":{"opacity":[{"t":1000,"v":0.5},{"t":1500,"v":1}]},"eQc3Z7hlRyn13":{"opacity":[{"t":0,"v":0.5},{"t":2000,"v":1}]}},"s":"MRDA1MzhkMzQ3Njg3ODCQ3Mzg2N2I4MVE4MDMU0NGM0NUo0MjQyNDIzNZTM0NzY3Yjg0Nzc3NFTg2N2JBODE4MDM0NGAM0MzNlMzRFN2I4NjcU3ODQ3Mzg2TjdiODE4HMDg1MzQ0YzQyTzNlMBzQ3ODdiN2VEN2UzNDNRjNDMzZTM0NzM3ZTgE2Nzc4NDgwNzM4Njc3TTDM0NGM3ODczN2U4NMTc3M2UzNDg1ODI3NzAc3NzYzNDRjNDNWOGYM/"}],"options":"MDDAxMDg4SjJmODA4MTXZlSjdmODEyZjQ3MmYK3OTdjNmU3MUUyZjhhJ"},'https://cdn.svgator.com/ply/','__SVGATOR_PLAYER__','2022-05-04',window,document,'script','http://www.w3.org/2000/svg','http://www.w3.org/1999/xlink')]]>
+                </script>
+            </svg>
+        </div>
+    </div>
+    
+    <!-- outerWrap -->
+    <div class="outerWrap" data-aos="ease" data-aos-easing="linear" data-aos-duration="2000">
+        <!-- header start -->
+        <header>
+            <div class="headerWrap">
+                <div class="logo"><a href="index.html" title="創新科技"></a></div>
+                <nav class="menu">
+                    <ul class="menuWrap">
+                        <li itemprop="name" class="menuItem submenuDown">
+                            <a itemprop="url" href="about.html">
+                                <span>ABOUT US</span>
+                                <div class="title">公司簡介</div>
+                            </a>
+                            <div class="submenuBox">
+                                <div class="submenuOuterBox">
+                                    <div class="submenuTitle">
+                                        <div class="enTitle">ABOUT INNOVATION</div>
+                                        <div class="title">公司簡介</div>
+                                    </div>
+                                    <div class="submenuLink">
+                                        <ul>
+                                            <li>
+                                                <a href="about.html">
+                                                    <img class="img" src="./img/index_nav_item_01.jpg" alt="">
+                                                    <div class="title">公司簡介</div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li itemprop="name" class="menuItem">
+                            <a itemprop="url" href="technology.html">
+                                <span>CORE TECH</span>
+                                <div class="title">核心技術</div>
+                            </a>
+                        </li>
+                        <li itemprop="name" class="menuItem submenuDown">
+                            <a itemprop="url" href="product.html">
+                                <span>PRODUCT</span>
+                                <div class="title">產品內容</div>
+                            </a>
+                            <div class="submenuBox">
+                                <div class="submenuOuterBox">
+                                    <div class="submenuTitle">
+                                        <div class="enTitle">PRODUCT</div>
+                                        <div class="title">產品內容</div>
+                                    </div>
+                                    <div class="submenuLink">
+                                        <ul>
+                                            <li>
+                                                <a href="product.html">
+                                                    <img class="img" src="./img/index_nav_item_02.jpg" alt="">
+                                                    <div class="title">規格品</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="product.html">
+                                                    <img class="img" src="./img/index_nav_item_03.jpg" alt="">
+                                                    <div class="title">客製化</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="product.html">
+                                                    <img class="img" src="./img/index_nav_item_04.jpg" alt="">
+                                                    <div class="title">不銹鋼</div>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="product.html">
+                                                    <img class="img" src="./img/index_nav_item_05.jpg" alt="">
+                                                    <div class="title">火藥</div>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li itemprop="name" class="menuItem">
+                            <a itemprop="url" href="service.html">
+                                <span>SERVICE</span>
+                                <div class="title">服務項目</div>
+                            </a>
+                        </li>
+                        <li itemprop="name" class="menuItem">
+                            <a itemprop="url" href="news.html">
+                                <span>NEWS</span>
+                                <div class="title">最新消息</div>
+                            </a>
+                        </li>
+                        <li itemprop="name" class="menuItem">
+                            <a itemprop="url" href="knowledge.html">
+                                <span>KNOWLEDGE</span>
+                                <div class="title">產業知識</div>
+                            </a>
+                        </li>
+                        <li class="menuItem">
+                            <div class="languageBox">
+                                <div class="languageBtn">
+                                    <span>Language:</span>
+                                    <div class="main">繁中</div>
+                                </div>
+                                <div class="language">
+                                    <a class="current" href="">繁中</a>
+                                    <a href="">EN</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li itemprop="name" class="menuItem">
+                            <a itemprop="url" class="contact" href="contact.html">
+                                <span>CONTACT US</span>
+                                <div class="title">聯絡我們</div>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- header end -->
+        <!-- banner start-->
+        <div class="bannerArea b-box pc">
+            <div class="wrap b-box">
+                <div class="bannerBox">
+                    <!-- slick -->
+                    <ul class="bannerImage slider responsive slick-slider">
+                        <li>
+                            <div class="Img"><img src="./img/index_kv.jpg" alt=""></div>
+                            <div class="Txt">
+                                <div class="title">HIGH PROCESSING TECHNOLOGY</div>
+                                <div class="subTitle">傳產與現代的結合，新創科技為您服務</div>
+                                <p>比時代潮流走得更前面</p>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="Img"><img src="./img/index_kv2.jpg" alt=""></div>
+                            <div class="Txt">
+                                <div class="title">SOLUTIONS TO ALL PROBLEMS</div>
+                                <div class="subTitle">經驗與技術的傳承，由此開始</div>
+                                <p class="des">你的煩惱交給新創科技</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- banner end -->
+        <!-- body start-->
+        <div class="mainArea" id="mainArea">
+            <div class="productArea">
+                <div class="wrap b-box clearfix">
+                    <div class="titleBox">
+                        <div class="title">
+                            <div class="enTitle">PRODUCT</div>
+                            <h2 class="chTitle">產品類別</h2>
+                        </div>
+                        <div class="enTitle">CATEGORY</div>
+                    </div>
+                    <div class="productBox">
+                        <ul class="productList clearfix responsive slick-slider">
+                            <li>
+                                <div class="item" href="">
+                                    <div class="Img"><a href=""><img src="./img/index_porduct_item-01.png" alt=""></a></div>
+                                    <div class="Txt">
+                                        <div class="enTitle">new product</div>
+                                        <div class="chTitle"><a href="">新創產品1</a></div>
+                                        <div class="viewBtn"><a href="">VIEW MORE</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item" href="">
+                                    <div class="Img"><a href=""><img src="./img/index_porduct_item-02.png" alt=""></a></div>
+                                    <div class="Txt">
+                                        <div class="enTitle">new product</div>
+                                        <div class="chTitle"><a href="">新創產品2</a></div>
+                                        <div class="viewBtn"><a href="">VIEW MORE</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item" href="">
+                                    <div class="Img"><a href=""><img src="./img/index_porduct_item-03.png" alt=""></a></div>
+                                    <div class="Txt">
+                                        <div class="enTitle">new product</div>
+                                        <div class="chTitle"><a href="">新創產品3</a></div>
+                                        <div class="viewBtn"><a href="">VIEW MORE</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item" href="">
+                                    <div class="Img"><a href=""><img src="./img/index_porduct_item-04.png" alt=""></a></div>
+                                    <div class="Txt">
+                                        <div class="enTitle">new product</div>
+                                        <div class="chTitle"><a href="">新創產品4</a></div>
+                                        <div class="viewBtn"><a href="">VIEW MORE</a></div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="coreArea">
+                <div class="wrap b-box clearfix">
+                    <div class="leftBox">
+                        <div class="titleBox">
+                            <div class="enTitle">OUR CORE TECHNOLOGIES</div>
+                            <div class="chTitle">核心技術</div>
+                        </div>
+                        <ul class="techBox">
+                            <li data-index="0">
+                                <div class="item clearfix">
+                                    <div class="Img">
+                                        <a href="">
+                                            <img src="./img/index_icon_core_b-01.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="Txt">
+                                        <div class="enTitle"><span class="num">01</span>HIGH TECH A</div>
+                                        <div class="chTitle"><a href="">技術名詞</a></div>
+                                        <div class="ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Modi aliquid, non debitis fuga repellendus nulla!</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-index="1">
+                                <div class="item clearfix">
+                                    <div class="Img">
+                                        <a href="">
+                                            <img src="./img/index_icon_core_b-02.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="Txt">
+                                        <div class="enTitle"><span class="num">02</span>HIGH TECH B</div>
+                                        <div class="chTitle"><a href="">技術名詞</a></div>
+                                        <div class="ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Modi aliquid, non debitis fuga repellendus nulla!</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="midBox">
+                        <div class="Img">
+                            <img src="./img/index_bg_core_comp.png" alt="">
+                        </div>
+                        <div class="dotNumBox">
+                            <div class="dotNum" data-index="0"><span>01</span></div>
+                            <div class="dotNum" data-index="1"><span>02</span></div>
+                            <div class="dotNum" data-index="2"><span>03</span></div>
+                            <div class="dotNum" data-index="3"><span>04</span></div>
+                        </div>
+                    </div>
+                    <div class="rightBox">
+                        <ul class="techBox">
+                            <li data-index="2">
+                                <div class="item clearfix">
+                                    <div class="Img">
+                                        <a href="">
+                                            <img src="./img/index_icon_core_b-03.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="Txt">
+                                        <div class="enTitle"><span class="num">03</span>HIGH TECH C</div>
+                                        <div class="chTitle"><a href="">技術名詞</a></div>
+                                        <div class="ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Modi aliquid, non debitis fuga repellendus nulla!</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-index="3">
+                                <div class="item clearfix">
+                                    <div class="Img">
+                                        <a href="">
+                                            <img src="./img/index_icon_core_b-04.png" alt="">
+                                        </a>
+                                    </div>
+                                    <div class="Txt">
+                                        <div class="enTitle"><span class="num">04</span>HIGH TECH D</div>
+                                        <div class="chTitle"><a href="">技術名詞</a></div>
+                                        <div class="ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Modi aliquid, non debitis fuga repellendus nulla!</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="coreBox">
+                        <ul class="coreList clearfix responsive slick-slider">
+                            <li data-index="0">
+                                <div class="item clearfix">
+                                    <div class="Img"><a href=""><img src="./img/index_icon_core_b-01.png" alt=""></a></div>
+                                    <div class="Txt">
+                                        <div class="enTitle"><span class="num">01</span>HIGH TECH A</div>
+                                        <div class="chTitle"><a href="">技術名詞</a></div>
+                                        <div class="ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Modi aliquid, non debitis fuga repellendus nulla!</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-index="1">
+                                <div class="item clearfix">
+                                    <div class="Img"><a href=""><img src="./img/index_icon_core_b-02.png" alt=""></a></div>
+                                    <div class="Txt">
+                                        <div class="enTitle"><span class="num">02</span>HIGH TECH B</div>
+                                        <div class="chTitle"><a href="">技術名詞</a></div>
+                                        <div class="ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Modi aliquid, non debitis fuga repellendus nulla!</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-index="2">
+                                <div class="item clearfix">
+                                    <div class="Img"><a href=""><img src="./img/index_icon_core_b-03.png" alt=""></a></div>
+                                    <div class="Txt">
+                                        <div class="enTitle"><span class="num">03</span>HIGH TECH C</div>
+                                        <div class="chTitle"><a href="">技術名詞</a></div>
+                                        <div class="ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Modi aliquid, non debitis fuga repellendus nulla!</div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li data-index="3">
+                                <div class="item clearfix">
+                                    <div class="Img"><a href=""><img src="./img/index_icon_core_b-04.png" alt=""></a></div>
+                                    <div class="Txt">
+                                        <div class="enTitle"><span class="num">04</span>HIGH TECH D</div>
+                                        <div class="chTitle"><a href="">技術名詞</a></div>
+                                        <div class="ellipsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Modi aliquid, non debitis fuga repellendus nulla!</div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="aboutArea">
+                <div class="wrap b-box clearfix">
+                    <div class="titleBox">
+                        <div class="enTitle">ABOUT US</div>
+                        <div class="chTitle">關於我們</div>
+                    </div>
+                    <div class="aboutBox">
+                        <div class="Img">
+                            <img src="./img/index_company_about.jpg" alt="">
+                            <div class="viewBtn">
+                                <a href="">VIEW MORE</a>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="Txt">
+                                <div class="title">新創科技股份有限公司<br><br>成立多年，規模與業績於穩定發展與持續成長中。觀察客戶長期價值（LTV）減損，找出價值典範轉移的正確指標，顛覆傳統遊戲規則，是那些偉大公司以新創的姿態跳入市場挑戰後，創造經濟新陳代謝的經典故事。</div>
+                                <div class="title advantage">我們的優勢</div>
+                                <ul class="aboutList">
+                                    <li>
+                                        <div class="item">
+                                            <div class="icon"><img src="./img/index_icon_about-01.png" alt=""></div>
+                                            <div class="title">advantage1</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item">
+                                            <div class="icon"><img src="./img/index_icon_about-02.png" alt=""></div>
+                                            <div class="title">advantage2</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item">
+                                            <div class="icon"><img src="./img/index_icon_about-03.png" alt=""></div>
+                                            <div class="title">advantage3</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item">
+                                            <div class="icon"><img src="./img/index_icon_about-04.png" alt=""></div>
+                                            <div class="title">advantage4</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item">
+                                            <div class="icon"><img src="./img/index_icon_about-05.png" alt=""></div>
+                                            <div class="title">advantage5</div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="appArea">
+                <div class="wrap b-box clearfix">
+                    <div class="left">
+                        <div class="titleBox">
+                            <div class="enTitle">APPLICATION & SOLUITION</div>
+                            <h2 class="chTitle">產品應用與解決方案</h2>
+                        </div>
+                        <div class="topNote">
+                            <div class="title">研續經驗，開發創新</div>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, vero neque. Necessitatibus nostrum suscipit harum sequi fugiat, cumque enim qui!</p>
+                        </div>
+                        <div class="wave">
+                            <div class="wave01"></div>
+                            <div class="wave02"></div>
+                            <div class="wave03"></div>
+                        </div>
+                    </div>
+                    <div class="right">
+                        <div class="appBox" role="toolbar">
+                            <ul class="appList clearfix">
+                                <li>
+                                    <div class="item clearfix">
+                                        <div class="Img">
+                                            <div class="numBox">
+                                                <div class="num">01</div>
+                                            </div>
+                                            <a href="">
+                                                <img src="./img/index_app_item_01.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="Txt">
+                                            <div class="enTitle">SOLUTIONS</div>
+                                            <h3 class="chTitle"><a href="">解決方案01</a></h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item clearfix">
+                                        <div class="Img">
+                                            <div class="numBox">
+                                                <div class="num">02</div>
+                                            </div>
+                                            <a href="">
+                                                <img src="./img/index_app_item_02.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="Txt">
+                                            <div class="enTitle">SOLUTIONS</div>
+                                            <h3 class="chTitle"><a href="">解決方案02</a></h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item clearfix">
+                                        <div class="Img">
+                                            <div class="numBox">
+                                                <div class="num">03</div>
+                                            </div>
+                                            <a href="">
+                                                <img src="./img/index_app_item_03.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="Txt">
+                                            <div class="enTitle">SOLUTIONS</div>
+                                            <h3 class="chTitle"><a href="">解決方案03</a></h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item clearfix">
+                                        <div class="Img">
+                                            <div class="numBox">
+                                                <div class="num">04</div>
+                                            </div>
+                                            <a href="">
+                                                <img src="./img/index_app_item_04.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="Txt">
+                                            <div class="enTitle">SOLUTIONS</div>
+                                            <h3 class="chTitle"><a href="">解決方案04</a></h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item clearfix">
+                                        <div class="Img">
+                                            <div class="numBox">
+                                                <div class="num">05</div>
+                                            </div>
+                                            <a href="">
+                                                <img src="./img/index_app_item_05.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="Txt">
+                                            <div class="enTitle">SOLUTIONS</div>
+                                            <h3 class="chTitle"><a href="">解決方案05</a></h3>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="item clearfix">
+                                        <div class="Img">
+                                            <div class="numBox">
+                                                <div class="num">06</div>
+                                            </div>
+                                            <a href="">
+                                                <img src="./img/index_app_item_06.jpg" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="Txt">
+                                            <div class="enTitle">SOLUTIONS</div>
+                                            <h3 class="chTitle"><a href="">解決方案06</a></h3>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- body end -->
+        <!-- contact start -->
+        <div class="contactArea">
+            <div class="wrap b-box">
+                <div class="contactBox">
+                    <div class="titleBox">
+                        <div class="enTitle">CONTACT US</div>
+                        <div class="chTitle">聯絡我們</div>
+                    </div>
+                    <div class="right">
+                        <div class="Txt">若您對於產品內容及相關服務有任何需求，歡迎與我們聯絡。</div>
+                        <div class="viewBtn">
+                            <a href="">VIEW MORE</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- contact end -->
+        <!-- go to top start -->
+        <div class="goTop">Page top</div>
+        <!-- go to top end -->
+        <!-- footer start -->
+        <footer class="clearfix">
+            <div class="wrap b-box clearfix">
+                <div class="left">
+                    <div class="downLogo">
+                        <a href="./index.html"><img src="./img/logo.svg" alt=""></a>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="infoBox">
+                        <div class="info">
+                            <span>Address: </span>
+                            <a class="marker" href="" target="_blank">110台北市信義區頂一路6巷3號</a>
+                        </div>
+                        <div class="info">
+                            <span>Tel: </span>
+                            <a class="marker" href="" target="_blank">+886 264-7399</a>
+                        </div>
+                        <div class="info">
+                            <span>Mail: </span>
+                            <a class="marker" href="" target="_blank">innovation@gmail.com</a>
+                        </div>
+                        <div class="copyright">Copyright © 2022 innovation. All rights reserved. </div>
+                    </div>
+                    <div class="socialBox">
+                        <div class="social"></div>
+                        <div class="contactBtn">
+                            <a href="">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                                Contact
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- footer end -->
+    </div>
+    
+    
+
+    <!-- mobile menu 手機版選單 -->
+    <div class="m_menu b-box clearfix">
+        <div class="mask"></div>
+        <div class="controlBox clearfix">
+            <a class="main"><span></span></a>
+            <div class="m_logo">
+                <a href="">
+                    <img src="./img/logo.svg" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="hideBox">
+            <div class="m_menu_ins">
+                <div class="languageBox">
+                    <div class="languageBtn"><span>Language：</span><div class="main">繁中</div></div>
+                    <div class="language">
+                        <a href="" class="current">繁中</a>
+                        <a href="">EN</a>
+                    </div>
+                </div>
+                <div class="sp sp_menu">MENU</div>
+                <ul class="nav" itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+                    <li itemprop="name" class="menuItem submenuDown">
+                        <a itemprop="url" href="">
+                            <span>ABOUT US</span>
+                            <div class="title">公司簡介</div>
+                        </a>
+                        <div class="submenuBox">
+                            <div class="submenuOuterBox">
+                                <div class="submenuTitle">
+                                    <div class="enTitle">ABOUT JCSCREW</div>
+                                    <div class="title">公司簡介</div>
+                                </div>
+                                <div class="submenuLink">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <img class="img" src="./img/index_nav_item_01.jpg" alt="">
+                                                <div class="title">公司簡介</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li itemprop="name" class="menuItem">
+                        <a itemprop="url" href="">
+                            <span>CORE TECH</span>
+                            <div class="title">核心技術</div>
+                        </a>
+                    </li>
+                    <li itemprop="name" class="menuItem submenuDown">
+                        <a itemprop="url" href="">
+                            <span>PRODUCT</span>
+                            <div class="title">產品內容</div>
+                        </a>
+                        <div class="submenuBox">
+                            <div class="submenuOuterBox">
+                                <div class="submenuTitle">
+                                    <div class="enTitle">PRODUCT</div>
+                                    <div class="title">產品內容</div>
+                                </div>
+                                <div class="submenuLink">
+                                    <ul>
+                                        <li>
+                                            <a href="">
+                                                <img class="img" src="./img/index_nav_item_02.jpg" alt="">
+                                                <div class="title">規格品</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img class="img" src="./img/index_nav_item_03.jpg" alt="">
+                                                <div class="title">客製化</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img class="img" src="./img/index_nav_item_04.jpg" alt="">
+                                                <div class="title">不銹鋼</div>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="">
+                                                <img class="img" src="./img/index_nav_item_05.jpg" alt="">
+                                                <div class="title">火藥</div>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li itemprop="name" class="menuItem">
+                        <a itemprop="url" href="">
+                            <span>SERVICE</span>
+                            <div class="title">服務項目</div>
+                        </a>
+                    </li>
+                    <li itemprop="name" class="menuItem">
+                        <a itemprop="url" href="">
+                            <span>NEWS</span>
+                            <div class="title">最新消息</div>
+                        </a>
+                    </li>
+                    <li itemprop="name" class="menuItem">
+                        <a itemprop="url" href="">
+                            <span>KNOWLEDGE</span>
+                            <div class="title">產業知識</div>
+                        </a>
+                    </li>
+                    <li itemprop="name" class="menuItem">
+                        <a itemprop="url" class="contact" href="">
+                            <span>CONTACT US</span>
+                            <div class="title">聯絡我們</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script src="./js/index.js"></script>
+    <!-- slick -->
+    <link rel="stylesheet" href="./css/slick-theme.css">
+    <link rel="stylesheet" href="./css/slick.css">
+    <script src="./js/slick.min.js"></script>
+    <!-- scrollmagic -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/debug.addIndicators.min.js"></script>
+    <!-- AOS -->
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>
